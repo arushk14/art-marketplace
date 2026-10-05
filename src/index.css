@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: 'kern';
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-serif;
+    font-optical-sizing: auto;
+  }
+  ::selection {
+    @apply bg-clay-200 text-ink;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 md:px-10 lg:px-14;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-sans text-sm font-medium tracking-wide transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-ink text-paper px-7 py-3.5 hover:bg-clay-600 active:scale-[0.98];
+  }
+  .btn-accent {
+    @apply btn bg-clay-500 text-white px-7 py-3.5 hover:bg-clay-600 active:scale-[0.98];
+  }
+  .btn-outline {
+    @apply btn border border-ink/20 text-ink px-7 py-3.5 hover:border-ink hover:bg-ink hover:text-paper active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply btn text-ink-muted hover:text-ink px-4 py-2;
+  }
+
+  .label-eyebrow {
+    @apply font-sans text-xs font-medium uppercase tracking-widest2 text-ink-muted;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-paper-line bg-white px-4 py-3 font-sans text-sm text-ink placeholder:text-ink-faint transition-colors focus:border-clay-400 focus:outline-none focus:ring-2 focus:ring-clay-200/60;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-paper-line bg-white;
+  }
+
+  /* Loading shimmer */
+  .shimmer {
+    @apply relative overflow-hidden bg-paper-deep;
+  }
+  .shimmer::after {
+    @apply absolute inset-0 -translate-x-full;
+    content: '';
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+    animation: shimmer 1.6s infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
