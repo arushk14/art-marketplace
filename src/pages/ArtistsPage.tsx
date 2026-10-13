@@ -52,7 +52,7 @@ export function ArtistsPage() {
           </div>
           <p className="font-serif text-2xl text-ink">No artists yet</p>
           <p className="max-w-md font-sans text-sm leading-relaxed text-ink-muted">
-            When artists join himabindu.studio, their profiles and portfolios will
+            When artists join artzillow.studio, their profiles and portfolios will
             appear here. Each artist gets a dedicated page to showcase their full
             body of work.
           </p>

@@ -184,7 +184,7 @@ export function HomePage() {
             <EmptyState
               icon={<Users className="h-10 w-10" strokeWidth={1} />}
               title="No artists yet"
-              body="When artists join himabindu.studio, their profiles and portfolios will be featured here."
+              body="When artists join artzillow.studio, their profiles and portfolios will be featured here."
             />
           ) : (
             <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
@@ -211,7 +211,7 @@ export function HomePage() {
           />
           <ValueProp
             title="Direct from the artist"
-            body="Buying on himabindu.studio means supporting an independent artist directly. Each work ships from the artist's studio."
+            body="Buying on artzillow.studio means supporting an independent artist directly. Each work ships from the artist's studio."
           />
           <ValueProp
             title="Artist portfolios"

@@ -53,9 +53,9 @@ export function Header({ onOpenCart }: HeaderProps) {
     >
       <div className="container-content flex items-center justify-between py-5">
         {/* Logo */}
-        <Link to="/" className="flex items-baseline gap-0" ariaLabel="himabindu.studio home">
+        <Link to="/" className="flex items-baseline gap-0" ariaLabel="artzillow.studio home">
           <span className="font-serif text-2xl font-medium tracking-tightish text-ink">
-            himabindu
+            artzillow
           </span>
           <span className="font-serif text-2xl font-light text-clay-500">.studio</span>
         </Link>

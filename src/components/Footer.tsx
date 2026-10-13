@@ -10,7 +10,7 @@ export function Footer() {
           <div className="max-w-sm">
             <Link to="/" className="flex items-baseline">
               <span className="font-serif text-2xl font-medium tracking-tightish text-ink">
-                himabindu
+                artzillow
               </span>
               <span className="font-serif text-2xl font-light text-clay-500">.studio</span>
             </Link>
@@ -96,7 +96,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-paper-line pt-8 sm:flex-row sm:items-center">
           <p className="font-sans text-xs text-ink-faint">
-            © {new Date().getFullYear()} himabindu.studio. All artworks belong to their respective artists.
+            © {new Date().getFullYear()} artzillow.studio. All artworks belong to their respective artists.
           </p>
           <p className="font-sans text-xs text-ink-faint">
             Crafted with care for collectors of original art.
