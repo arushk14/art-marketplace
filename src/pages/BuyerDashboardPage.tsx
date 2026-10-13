@@ -23,7 +23,7 @@ export function BuyerDashboardPage() {
     }
     if (!user) return;
 
-    Promise.all([fetchOrders(), fetchWishlist(), fetchFollowedArtists(user.id), fetchBuyerPurchases()])
+    Promise.all([fetchOrders(), fetchWishlist(), fetchFollowedArtists(user.id), fetchBuyerPurchases(user.id)])
       .then(([o, w, f, p]) => {
         setOrders(o);
         setWishlist(w);

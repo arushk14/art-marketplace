@@ -251,7 +251,9 @@ export async function fetchFollowedArtists(userId: string): Promise<Artist[]> {
     .eq('follower_id', userId)
     .order('created_at', { ascending: false });
   if (error) throw error;
-  return data as unknown as Artist[];
+  return (data as unknown as { artist: Artist | null }[])
+    .map((row) => row.artist)
+    .filter((a): a is Artist => a !== null);
 }
 
 export async function fetchFollowerCount(artistId: string): Promise<number> {
@@ -514,10 +516,12 @@ export async function fetchPurchasesBySessionId(sessionId: string): Promise<Purc
   return data as unknown as PurchaseWithDetails[];
 }
 
-export async function fetchBuyerPurchases(): Promise<PurchaseWithDetails[]> {
+export async function fetchBuyerPurchases(buyerId: string): Promise<PurchaseWithDetails[]> {
+  // RLS also exposes purchases where the user is the seller, so scope to buyer.
   const { data, error } = await supabase
     .from('purchases')
     .select('*, artwork:artworks(*), artist:artists(*)')
+    .eq('buyer_id', buyerId)
     .order('created_at', { ascending: false });
   if (error) return [];
   return data as unknown as PurchaseWithDetails[];
